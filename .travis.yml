@@ -1,0 +1,8 @@
+sudo : required
+serices :
+  - docker
+before_install :
+  - docker build -t yuvidockerengine/docker-learning -f Dockerfile.dev .
+
+script :
+  - docker run -e CI = true yuvidockerengine/docker-learning npm run test
